@@ -23,10 +23,7 @@ class WhvCustomer < Customer
 
         Pusher.trigger('whv_customers', "did_succeed", {
           id: id,
-          event: event,
-          success_ratio: success_ratio.to_s,
-          failure_ratio: failure_ratio.to_s,
-          unknown_ratio: unknown_ratio.to_s
+          event: event
         })
       end
     end
@@ -43,10 +40,7 @@ class WhvCustomer < Customer
         Pusher.trigger('whv_customers', "did_fail", {
           id: id,
           event: event,
-          message: message,
-          success_ratio: success_ratio.to_s,
-          failure_ratio: failure_ratio.to_s,
-          unknown_ratio: unknown_ratio.to_s
+          message: message
         })
       end
     end
@@ -58,17 +52,5 @@ class WhvCustomer < Customer
     define_method "failed_#{event}?" do
       application_events.where(name: event).most_recent_first.first.try!(:failed?)
     end
-  end
-
-  def success_ratio
-    (EVENTS.count {|event| send("did_#{event}?")}.to_f / EVENTS.count * 100).to_i
-  end
-
-  def failure_ratio
-    (EVENTS.count {|event| send("failed_#{event}?")}.to_f / EVENTS.count * 100).to_i
-  end
-
-  def unknown_ratio
-    100 - success_ratio - failure_ratio
   end
 end
