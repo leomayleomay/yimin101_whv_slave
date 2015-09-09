@@ -3,8 +3,6 @@ namespace :ec2 do
     Customer.find_each do |customer|
       system("bash", "-c", "ALIAS=#{customer.id} ROLES=app cap rubber:create")
       system("bash", "-c", "cap rubber:bootstrap")
-      system("bash", "-c", "cap deploy:cold")
-      system("bash", "-c", "cap deploy")
     end
   end
 
