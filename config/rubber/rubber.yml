@@ -261,7 +261,7 @@ isolate_security_groups: false
 
 # OPTIONAL: Prompts one to sync security group rules when the ones in amazon
 # differ from those in rubber
-prompt_for_security_group_sync: true
+prompt_for_security_group_sync: false
 
 # OPTIONAL: A list of CIDR address blocks that represent private networks for your cluster.
 # Set this to open up wide access to hosts in your network.  Consequently, setting the CIDR block
@@ -271,7 +271,7 @@ private_networks: [10.0.0.0/8]
 # OPTIONAL: The packages to install on all instances
 # You can install a specific version of a package by using a sub-array of pkg, version
 # For example, packages: [[rake, 0.7.1], irb]
-packages: [postfix, build-essential, git-core, libxslt-dev, ntp]
+packages: [postfix, build-essential, git-core, libxslt-dev, ntp, qt5-default, libqt5webkit5-dev]
 
 # OPTIONAL: The package manager mirror to use for installation of primary packages (i.e., those not explicitly
 # sourced from a different repository).  If not specified, whatever mirror configured by your server image

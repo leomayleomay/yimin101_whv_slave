@@ -1,8 +1,7 @@
 # REQUIRED: The credentials for creating/accessing your app's database
 #
-db_user: "#{app_name[0,16].downcase}"
-db_pass:
-db_name: "#{app_name.downcase}_#{Rubber.env}"
+
+db_url: "postgres://wbjzxubjkjmbqp:AFKsJCaLkfpV61UCj6GsQjZap1@ec2-107-21-106-196.compute-1.amazonaws.com:5432/d8kgdvobtavou8"
 
 db_replication_user: replication
 db_replication_pass:
