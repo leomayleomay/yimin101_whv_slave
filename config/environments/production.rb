@@ -79,6 +79,6 @@ Rails.application.configure do
   config.middleware.use ExceptionNotification::Rack, :email => {
     :email_prefix => "[Yimin101 WHV Slave Exception] ",
     :sender_address => %{"Incidents" <incidents@yimin101.com>},
-    :exception_recipients => %w{leomayleomay@gmail.com}
+    :exception_recipients => %w{devops.yimin101@gmail.com}
   }
 end

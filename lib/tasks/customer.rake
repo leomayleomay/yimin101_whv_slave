@@ -1,10 +1,10 @@
 namespace :customer do
   desc :load_customer => :environment do
-    @customer = Marshal.load(Rails.root.join("customer.dump"))
+    @customer = Customer.find_by_id(ENV['HOSTNAME'].split('.')[0])
   end
 
   desc "signup the customers"
-  task :signup => :environment do
+  task :signup => :load_customer do
     if @customer
       Task::Signup.new(@customer).execute
 
@@ -17,7 +17,7 @@ namespace :customer do
   end
 
   desc "apply WHV"
-  task :whv => :environment do
+  task :whv => :load_customer do
     if @customer
       ApplyWhv.new(@customer).call
     else
