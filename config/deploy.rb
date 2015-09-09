@@ -94,6 +94,21 @@ task :cleanup, :except => { :no_release => true } do
   CMD
 end
 
+namespace :figaro do
+  desc "SCP transfer figaro configuration to the shared folder"
+  task :setup do
+    transfer :up, "config/application.yml", "#{shared_path}/application.yml", via: :scp
+  end
+
+  desc "Symlink application.yml to the release path"
+  task :symlink do
+    run "ln -sf #{shared_path}/application.yml #{latest_release}/config/application.yml"
+  end
+end
+
+after "deploy:setup", "figaro:setup"
+after 'deploy:finalize_update', 'figaro:symlink'
+
 # We need to ensure that rubber:config runs before asset precompilation in Rails, as Rails tries to boot the environment,
 # which means needing to have DB access.  However, if rubber:config hasn't run yet, then the DB config will not have
 # been generated yet.  Rails will fail to boot, asset precompilation will fail to complete, and the deploy will abort.
