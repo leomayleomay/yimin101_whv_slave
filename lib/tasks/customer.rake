@@ -1,6 +1,10 @@
+require 'socket'
+
 namespace :customer do
   desc :load_customer => :environment do
-    @customer = Customer.find_by_id(ENV['HOSTNAME'].split('.')[0])
+    hostname = Socket.gethostname
+    customer_id = hostname.split('.').first if hostname
+    @customer = Customer.find_by_id(customer_id) if customer_id
   end
 
   desc "signup the customers"
