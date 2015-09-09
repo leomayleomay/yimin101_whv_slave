@@ -1,0 +1,23 @@
+---
+- !ruby/object:Rubber::Configuration::InstanceItem
+  name: app01
+  domain: yimin101.com
+  roles:
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: app
+    options: {}
+  instance_id: i-1906ffc6
+  image_type: t1.micro
+  image_id: ami-9b0b62a1
+  security_groups:
+  - default
+  external_host: ec2-54-153-253-157.ap-southeast-2.compute.amazonaws.com
+  external_ip: 54.153.253.157
+  internal_host: ip-172-31-11-28.ap-southeast-2.compute.internal
+  internal_ip: 172.31.11.28
+  zone: ap-southeast-2b
+  provider: aws
+  platform: linux
+  root_device_type: ebs
+- volumes: {}
+  static_ips: {}
