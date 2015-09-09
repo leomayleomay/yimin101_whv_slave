@@ -13,4 +13,4 @@ RUBBER_ENV=<%= Rubber.env %>
 RAILS_ENV=<%= Rubber.env %>
 
 # Roll all rails logs at midnight
-0 0 * * * <%= Rubber.root %>/script/rubber cron --task util:rotate_logs --directory=<%= Rubber.root %>/log
+# 0 0 * * * <%= Rubber.root %>/script/rubber cron --task util:rotate_logs --directory=<%= Rubber.root %>/log
