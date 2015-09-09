@@ -31,10 +31,6 @@ gem 'rubber'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
-group :development do
-  gem 'capistrano'
-end
-
 group :development, :test do
   gem 'byebug'
 end
