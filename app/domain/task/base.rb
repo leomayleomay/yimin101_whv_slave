@@ -1,6 +1,7 @@
 require "capybara"
 require "capybara/dsl"
 require "capybara-webkit"
+require 'capybara/user_agent'
 
 Capybara.run_server = false
 Capybara.current_driver = :webkit
@@ -10,11 +11,14 @@ module Task
 
   class Base
     include Capybara::DSL
+    include Capybara::UserAgent::DSL
 
-    attr_reader :customer
+    attr_reader :customer, :executed
 
     def initialize(customer)
       @customer = customer
+
+      set_user_agent(:chrome)
     end
 
     def execute
@@ -24,6 +28,8 @@ module Task
         do_execute
 
         succeed!
+
+        mark_as_executed
       rescue => e
         # Capybara::Screenshot.screenshot_and_save_page
 
@@ -34,6 +40,14 @@ module Task
     end
 
     protected
+
+    def executed?
+      !!@executed
+    end
+
+    def mark_as_executed
+      @executed = true
+    end
 
     def application_id
       @application_id ||= customer.application_id

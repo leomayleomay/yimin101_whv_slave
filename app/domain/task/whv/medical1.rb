@@ -3,10 +3,6 @@ module Task
     class Medical1 < Task::Base
       protected
 
-      def executed?
-        customer.did_medical1?
-      end
-
       def succeed!
         customer.medical1_did_succeed!
       end

@@ -3,10 +3,6 @@ module Task
     class Personal1 < Task::Base
       protected
 
-      def executed?
-        customer.did_personal1?
-      end
-
       def succeed!
         customer.personal1_did_succeed!
       end

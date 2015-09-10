@@ -45,10 +45,6 @@ class WhvCustomer < Customer
       end
     end
 
-    define_method "did_#{event}?" do
-      application_events.where(name: event).most_recent_first.first.try!(:successful?)
-    end
-
     define_method "failed_#{event}?" do
       application_events.where(name: event).most_recent_first.first.try!(:failed?)
     end

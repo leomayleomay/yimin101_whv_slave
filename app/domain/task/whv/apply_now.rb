@@ -3,10 +3,6 @@ module Task
     class ApplyNow < Task::Base
       protected
 
-      def executed?
-        customer.did_apply_now?
-      end
-
       def succeed!
         uri = URI.parse(current_url)
         application_id = uri.query.match(/ApplicationId=(\d+)/)[1]

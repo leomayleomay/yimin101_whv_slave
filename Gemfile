@@ -13,6 +13,8 @@ gem "capybara-webkit"
 
 gem 'capybara-screenshot'
 
+gem 'capybara-user_agent'
+
 gem 'pusher'
 
 gem 'spawnling', '~>2.1'

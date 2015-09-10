@@ -3,10 +3,6 @@ module Task
     class Login < Task::Base
       protected
 
-      def executed?
-        false
-      end
-
       def succeed!
         customer.login_did_succeed!
       end

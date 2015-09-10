@@ -3,10 +3,6 @@ module Task
     class Specific < Task::Base
       protected
 
-      def executed?
-        customer.did_whv_specific?
-      end
-
       def succeed!
         customer.whv_specific_did_succeed!
       end

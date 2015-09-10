@@ -1,11 +1,13 @@
 class ApplyWhv
-  MAX_RETRIES = 3
+  MAX_RETRIES = 100
 
   def initialize(customer)
     @customer = customer
   end
 
   def call
+    login_task.execute
+
     begin
       tasks.each(&:execute)
     rescue Task::Error => e
@@ -21,9 +23,12 @@ class ApplyWhv
   end
 
   protected
+  def login_task
+    Task::Whv::Login.new(@customer)
+  end
+
   def tasks
-    [
-      Task::Whv::Login.new(@customer),
+    @tasks ||= [
       Task::Whv::ApplyNow.new(@customer),
       Task::Whv::Personal1.new(@customer),
       Task::Whv::Personal2.new(@customer),

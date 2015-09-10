@@ -3,10 +3,6 @@ module Task
     class Pay < Task::Base
       protected
 
-      def executed?
-        false
-      end
-
       def succeed!
         customer.pay_did_succeed!
       end

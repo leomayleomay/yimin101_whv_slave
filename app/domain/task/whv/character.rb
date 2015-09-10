@@ -3,10 +3,6 @@ module Task
     class Character < Task::Base
       protected
 
-      def executed?
-        customer.did_character?
-      end
-
       def succeed!
         customer.character_did_succeed!
       end

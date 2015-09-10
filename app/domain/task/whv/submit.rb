@@ -3,10 +3,6 @@ module Task
     class Submit < Task::Base
       protected
 
-      def executed?
-        customer.did_submit?
-      end
-
       def succeed!
         customer.submit_did_succeed!
       end
