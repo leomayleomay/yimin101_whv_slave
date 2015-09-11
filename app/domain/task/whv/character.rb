@@ -16,7 +16,7 @@ module Task
       end
 
       def do_execute
-        visit(url) if current_url != url
+        visit(url)
 
         select(customer.imprisionment_of_5_years_or_more, from: "ctl00_ContentPlaceHolder1_character_imprisonment5YearsDropDownList")
         select(customer.imprisionment_of_12_months_or_more, from: "ctl00_ContentPlaceHolder1_character_imprisonment12MonthsDropDownList")

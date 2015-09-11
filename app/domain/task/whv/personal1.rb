@@ -16,7 +16,7 @@ module Task
       end
 
       def do_execute
-        visit(url) if current_url != url
+        visit(url)
 
         fill_in("ctl00_ContentPlaceHolder1_personDetails_familyNameTextBox", with: customer.family_name)
         fill_in("ctl00_ContentPlaceHolder1_personDetails_givenName1Textbox", with: customer.given_name_1)

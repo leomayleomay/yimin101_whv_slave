@@ -16,7 +16,7 @@ module Task
       end
 
       def do_execute
-        visit(url) if current_url != url
+        visit(url)
 
         check("ctl00_ContentPlaceHolder1_falseStatementCheckBox")
         check("ctl00_ContentPlaceHolder1_notesCheckBox")

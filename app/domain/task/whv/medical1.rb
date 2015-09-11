@@ -16,7 +16,7 @@ module Task
       end
 
       def do_execute
-        visit(url) if current_url != url
+        visit(url)
 
         select(customer.renal_dialysis, from: "ctl00_ContentPlaceHolder1_medicalConditions_renalDialysisDropDownList")
         select(customer.tuberculosis, from: "ctl00_ContentPlaceHolder1_medicalConditions_tuberculosisDropDownList")

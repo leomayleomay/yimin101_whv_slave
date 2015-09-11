@@ -16,7 +16,7 @@ module Task
       end
 
       def do_execute
-        visit(url) if current_url != url
+        visit(url)
 
         select(customer.previous_whv_permit, from: "ctl00_ContentPlaceHolder1_offshoreDetails_commonWHSQuestions_previousWhsPermitVisaDropDownList")
         select(customer.sufficient_funds, from: "ctl00_ContentPlaceHolder1_offshoreDetails_commonWHSQuestions_sufficientFundsHolidayDropDownList")

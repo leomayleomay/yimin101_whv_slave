@@ -16,7 +16,7 @@ module Task
       end
 
       def do_execute
-        visit(url) if current_url != url
+        visit(url)
 
         fill_in("ctl00_ContentPlaceHolder1_identification_passportNumberTextBox", with: customer.passport_number)
         fill_in("ctl00_ContentPlaceHolder1_identification_confirmPassportNumberTextBox", with: customer.passport_number)

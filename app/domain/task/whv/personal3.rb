@@ -16,7 +16,7 @@ module Task
       end
 
       def do_execute
-        visit(url) if current_url != url
+        visit(url)
 
         fill_in("ctl00_ContentPlaceHolder1_generalPersonal_industryControl_optionListSearch_SearchStringTextBox", with: customer.industry)
         find("#ctl00_ContentPlaceHolder1_generalPersonal_industryControl_optionListSearch_SearchImageButton").click

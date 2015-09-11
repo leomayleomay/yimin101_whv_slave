@@ -6,8 +6,6 @@ class ApplyWhv
   end
 
   def call
-    login_task.execute
-
     begin
       tasks.each(&:execute)
     rescue Task::Error => e
@@ -23,12 +21,10 @@ class ApplyWhv
   end
 
   protected
-  def login_task
-    Task::Whv::Login.new(@customer)
-  end
 
   def tasks
     @tasks ||= [
+      Task::Whv::Login.new(@customer),
       Task::Whv::ApplyNow.new(@customer),
       Task::Whv::Personal1.new(@customer),
       Task::Whv::Personal2.new(@customer),
