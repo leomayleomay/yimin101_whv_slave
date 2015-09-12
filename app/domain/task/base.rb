@@ -18,6 +18,10 @@ module Task
     def initialize(customer)
       @customer = customer
 
+      set_timeout(10)
+
+      skip_loading_image
+
       set_user_agent(:chrome)
     end
 
@@ -55,6 +59,18 @@ module Task
 
     def task_name
       self.class.name
+    end
+
+    def browser
+      @browser ||= page.driver.browser
+    end
+
+    def set_timeout(timeout)
+      browser.timeout = timeout
+    end
+
+    def skip_loading_image
+      browser.set_skip_image_loading true
     end
   end
 end

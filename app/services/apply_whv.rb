@@ -1,5 +1,5 @@
 class ApplyWhv
-  MAX_RETRIES = 100
+  MAX_RETRIES = 1000000
 
   def initialize(customer)
     @customer = customer
