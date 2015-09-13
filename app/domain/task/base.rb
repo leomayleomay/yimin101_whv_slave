@@ -50,7 +50,7 @@ module Task
     end
 
     def application_id
-      @application_id ||= customer.application_id
+      customer.application_id
     end
 
     def task_name
