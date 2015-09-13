@@ -22,9 +22,9 @@ module Task
     end
 
     def execute
-      return if executed?
-
       begin
+        return if executed?
+
         do_execute
 
         succeed!
