@@ -4,6 +4,8 @@ module Task
       protected
 
       def succeed!
+        Capybara::Screenshot.screenshot_and_save_page
+
         customer.pay_did_succeed!
       end
 
