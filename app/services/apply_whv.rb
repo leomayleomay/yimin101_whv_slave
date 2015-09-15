@@ -1,6 +1,4 @@
 class ApplyWhv
-  MAX_RETRIES = 1000000
-
   def initialize(customer)
     @customer = customer
   end
@@ -8,15 +6,8 @@ class ApplyWhv
   def call
     begin
       tasks.each(&:execute)
-    rescue Task::Error => e
-      @retries ||= 0
-
-      if @retries < MAX_RETRIES
-        @retries += 1
-        retry
-      else
-        raise e
-      end
+    rescue Task::Error
+      retry
     end
   end
 
