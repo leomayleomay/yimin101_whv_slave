@@ -22,8 +22,7 @@ module Task
 
         fill_in("ctl00_ContentPlaceHolder1_payorNameTextBox", with: customer.full_name)
         find("#ctl00_ContentPlaceHolder1_okImageButton").click
-
-        find("#card_type_#{Figaro.env.cc_type}").click
+        first("#card_type_#{Figaro.env.cc_type}").click
         fill_in("cardnumber", with: Figaro.env.cc_number)
         fill_in("cardverificationcode", with: Figaro.env.cc_cvv)
         select(Figaro.env.cc_exp_month, from: "expirymonth")
