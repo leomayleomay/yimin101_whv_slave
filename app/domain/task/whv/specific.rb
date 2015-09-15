@@ -18,7 +18,8 @@ module Task
       def do_execute
         visit(url)
 
-        select(customer.previous_whv_permit, from: "ctl00_ContentPlaceHolder1_offshoreDetails_commonWHSQuestions_previousWhsPermitVisaDropDownList")
+        # select(customer.previous_whv_permit, from: "ctl00_ContentPlaceHolder1_offshoreDetails_commonWHSQuestions_previousWhsPermitVisaDropDownList")
+        select("No", from: "ctl00_ContentPlaceHolder1_offshoreDetails_commonWHSQuestions_previousWhsPermitVisaDropDownList")
         # select(customer.sufficient_funds, from: "ctl00_ContentPlaceHolder1_offshoreDetails_commonWHSQuestions_sufficientFundsHolidayDropDownList")
         select("Yes", from: "ctl00_ContentPlaceHolder1_offshoreDetails_commonWHSQuestions_sufficientFundsHolidayDropDownList")
         select(customer.intended_travel_date.strftime("%d"), from: "ctl00_ContentPlaceHolder1_offshoreDetails_intendedTravelDateDatePicker_Day")
