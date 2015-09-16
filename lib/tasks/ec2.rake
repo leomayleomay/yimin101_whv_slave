@@ -2,8 +2,9 @@ namespace :ec2 do
   task :create => :environment do
     Customer.find_each do |customer|
       system("bash", "-c", "ALIAS=#{customer.id} ROLES=app cap rubber:create")
-      system("bash", "-c", "cap rubber:bootstrap")
     end
+
+    system("bash", "-c", "cap rubber:bootstrap")
   end
 
   task :destroy => :environment do
