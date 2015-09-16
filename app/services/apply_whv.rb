@@ -16,7 +16,7 @@ class ApplyWhv
   def tasks
     @tasks ||= [
       Task::Whv::Login.new(@customer),
-      Task::Whv::Sleep.new(@customer),
+      Task::Sleep.new(@customer),
       Task::Whv::ApplyNow.new(@customer),
       Task::Whv::Personal1.new(@customer),
       Task::Whv::Personal2.new(@customer),

@@ -28,4 +28,13 @@ namespace :customer do
       AdminMailer.no_customer_found.deliver_now
     end
   end
+
+  desc "apply SFV"
+  task :sfv => :load_customer do
+    if @customer
+      ApplySfv.new(@customer).call
+    else
+      AdminMailer.no_customer_found.deliver_now
+    end
+  end
 end

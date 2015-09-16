@@ -1,5 +1,5 @@
 module Task
-  module Whv
+  module Sfv
     class ApplyNow < Task::Base
       protected
 
@@ -15,7 +15,7 @@ module Task
       end
 
       def url
-        "https://www.immigration.govt.nz/WorkingHoliday/Application/Create.aspx?CountryId=46"
+        "https://www.immigration.govt.nz/SilverFern/Application/Create.aspx?CountryId=46"
       end
 
       def do_execute

@@ -30,6 +30,8 @@ module Task
         succeed!
 
         mark_as_executed
+
+        Capybara::Screenshot.screenshot_and_save_page
       rescue => e
         # Capybara::Screenshot.screenshot_and_save_page
 

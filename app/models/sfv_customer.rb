@@ -1,4 +1,4 @@
-class WhvCustomer < Customer
+class SfvCustomer < Customer
   EVENTS = [
     "login",
     "signup",
@@ -8,22 +8,22 @@ class WhvCustomer < Customer
     "personal3",
     "medical1",
     "character",
-    "whv_specific",
+    "sfv_specific",
     "submit",
     "pay"
   ]
 
   EVENTS.each do |event|
     define_method "#{event}_did_succeed!" do
-      save! if event == "apply_now"
-
       Spawnling.new do
+        save! if event == "apply_now"
+
         application_events.create!(
           name: event,
           successful: true
         )
 
-        Pusher.trigger('whv_customers', "did_succeed", {
+        Pusher.trigger('sfv_customers', "did_succeed", {
           id: id,
           event: event
         })
@@ -39,7 +39,7 @@ class WhvCustomer < Customer
           backtrace: backtrace
         )
 
-        Pusher.trigger('whv_customers', "did_fail", {
+        Pusher.trigger('sfv_customers', "did_fail", {
           id: id,
           event: event,
           message: message
