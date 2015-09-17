@@ -1,3 +1,6 @@
+set :whenever_command, "bundle exec whenever"
+require "whenever/capistrano"
+
 # This is a sample Capistrano config file for rubber
 
 set :rails_env, Rubber.env
