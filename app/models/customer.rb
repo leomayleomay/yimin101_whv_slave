@@ -7,7 +7,11 @@ class Customer < ActiveRecord::Base
     gender == "Female"
   end
 
+  def first_name
+    [given_name_1, given_name_2, given_name_3].compact.join(' ')
+  end
+
   def full_name
-    [given_name_1, given_name_2, given_name_3, family_name.upcase].compact.join(' ')
+    [first_name, family_name.upcase].join(' ')
   end
 end

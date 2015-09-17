@@ -11,6 +11,10 @@ module Task
         customer.personal3_did_fail_with_error!(message, backtrace)
       end
 
+      def errors
+        @errors ||= all(".ErrorMessageSmall").collect {|m| m.text}.select {|e| e != "&nbsp;*"}
+      end
+
       def url
         "https://www.immigration.govt.nz/WorkingHoliday/Wizard/Personal3.aspx?ApplicationId=#{application_id}&IndividualType=Primary&IndividualIndex=1"
       end

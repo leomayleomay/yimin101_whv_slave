@@ -1,7 +1,7 @@
 require 'socket'
 
 namespace :customer do
-  desc :load_customer => :environment do
+  task :load_customer => :environment do
     hostname = Socket.gethostname
     customer_id = hostname.split('.').first if hostname
     @customer = Customer.find_by_id(customer_id) if customer_id

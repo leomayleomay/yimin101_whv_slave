@@ -5,6 +5,7 @@ require 'capybara/user_agent'
 
 Capybara.run_server = false
 Capybara.current_driver = :webkit
+Capybara.save_and_open_page_path = "/home/ubuntu"
 
 module Task
   class Error < StandardError; end
@@ -13,7 +14,7 @@ module Task
     include Capybara::DSL
     include Capybara::UserAgent::DSL
 
-    attr_reader :customer, :executed
+    attr_reader :customer, :executed, :errors
 
     def initialize(customer)
       @customer = customer
@@ -27,11 +28,19 @@ module Task
 
         do_execute
 
-        succeed!
+        if errors.none?
+          succeed!
 
-        mark_as_executed
+          mark_as_executed
 
-        Capybara::Screenshot.screenshot_and_save_page
+          Capybara::Screenshot.screenshot_and_save_page
+        else
+          fail_with_error!(errors.join('\n'), nil)
+
+          reset_errors
+
+          raise Error
+        end
       rescue => e
         # Capybara::Screenshot.screenshot_and_save_page
 
@@ -57,6 +66,14 @@ module Task
 
     def task_name
       self.class.name
+    end
+
+    def errors
+      @errors = []
+    end
+
+    def reset_errors
+      @errors = []
     end
   end
 end

@@ -41,6 +41,7 @@ set :push_instance_config, Rubber.env != 'production'
 
 # don't waste time bundling gems that don't need to be there 
 set :bundle_without, [:development, :test, :staging] if Rubber.env == 'production'
+set :bundle_flags, "--deployment"
 
 # Allow us to do N hosts at a time for all tasks - useful when trying
 # to figure out which host in a large set is down:
