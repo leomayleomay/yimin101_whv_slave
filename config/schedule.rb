@@ -20,17 +20,17 @@
 # Learn more: http://github.com/javan/whenever
 
 every '0 10 19 11 *' do
-  command "RAILS_ENV=production xvfb-run bundle exec rake customer:signup"
+  command "RAILS_ENV=production xvfb-run bundle exec rake nz:customer:signup"
 end
 
 every '0 9 20 11 *' do
-  command "RAILS_ENV=production xvfb-run bundle exec rake customer:sfv"
+  command "RAILS_ENV=production xvfb-run bundle exec rake nz:customer:sfv"
 end
 
 every '0 10 30 4 *' do
-  command "RAILS_ENV=production xvfb-run bundle exec rake customer:signup"
+  command "RAILS_ENV=production xvfb-run bundle exec rake nz:customer:signup"
 end
 
 every '0 9 1 5 *' do
-  command "RAILS_ENV=production xvfb-run bundle exec rake customer:whv"
+  command "RAILS_ENV=production xvfb-run bundle exec rake nz:customer:whv"
 end

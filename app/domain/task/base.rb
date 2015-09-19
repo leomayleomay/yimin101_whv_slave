@@ -5,7 +5,10 @@ require 'capybara/user_agent'
 
 Capybara.run_server = false
 Capybara.current_driver = :webkit
-Capybara.save_and_open_page_path = "/home/ubuntu"
+
+if Rails.env.production?
+  Capybara.save_and_open_page_path = "/home/ubuntu"
+end
 
 module Task
   class Error < StandardError; end

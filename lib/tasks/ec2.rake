@@ -8,7 +8,7 @@ namespace :ec2 do
   end
 
   task :destroy => :environment do
-    Customer.successful.find_each do |customer|
+    Customer.paid.find_each do |customer|
       system("bash", "-c", "ALIAS=#{customer.id} cap rubber:destroy")
     end
   end
