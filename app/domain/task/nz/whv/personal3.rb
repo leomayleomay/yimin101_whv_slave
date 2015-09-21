@@ -1,7 +1,7 @@
 module Task
   module NZ
     module Whv
-      class Personal3 < Task::Base
+      class Personal3 < Task::NZ::Base
         protected
 
         def succeed!

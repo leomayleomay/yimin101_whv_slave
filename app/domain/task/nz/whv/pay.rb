@@ -1,7 +1,7 @@
 module Task
   module NZ
     module Whv
-      class Pay < Task::Base
+      class Pay < Task::NZ::Base
         protected
 
         def succeed!

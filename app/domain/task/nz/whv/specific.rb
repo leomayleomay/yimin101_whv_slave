@@ -1,7 +1,7 @@
 module Task
   module NZ
     module Whv
-      class Specific < Task::Base
+      class Specific < Task::NZ::Base
         protected
 
         def succeed!

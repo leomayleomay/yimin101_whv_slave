@@ -1,7 +1,7 @@
 module Task
   module NZ
     module Whv
-      class Medical1 < Task::Base
+      class Medical1 < Task::NZ::Base
         protected
 
         def succeed!

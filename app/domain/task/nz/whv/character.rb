@@ -1,7 +1,7 @@
 module Task
   module NZ
     module Whv
-      class Character < Task::Base
+      class Character < Task::NZ::Base
         protected
 
         def succeed!

@@ -1,7 +1,7 @@
 module Task
   module NZ
     module Sfv
-      class Submit < Task::Base
+      class Submit < Task::NZ::Base
         protected
 
         def succeed!

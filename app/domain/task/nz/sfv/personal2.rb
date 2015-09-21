@@ -1,7 +1,7 @@
 module Task
   module NZ
     module Sfv
-      class Personal2 < Task::Base
+      class Personal2 < Task::NZ::Base
         protected
 
         def succeed!

@@ -1,7 +1,7 @@
 module Task
   module NZ
     module Whv
-      class ApplyNow < Task::Base
+      class ApplyNow < Task::NZ::Base
         protected
 
         def succeed!

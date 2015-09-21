@@ -1,7 +1,7 @@
 module Task
   module NZ
     module Sfv
-      class Login < Task::Base
+      class Login < Task::NZ::Base
         protected
 
         def succeed!

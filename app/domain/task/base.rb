@@ -1,10 +1,7 @@
 require "capybara"
 require "capybara/dsl"
-require "capybara-webkit"
-require 'capybara/user_agent'
 
 Capybara.run_server = false
-Capybara.current_driver = :webkit
 
 if Rails.env.production?
   Capybara.save_and_open_page_path = "/home/ubuntu"
@@ -15,14 +12,11 @@ module Task
 
   class Base
     include Capybara::DSL
-    include Capybara::UserAgent::DSL
 
     attr_reader :customer, :executed, :errors
 
     def initialize(customer)
       @customer = customer
-
-      set_user_agent(:chrome)
     end
 
     def execute
