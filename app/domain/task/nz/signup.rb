@@ -22,14 +22,14 @@ module Task
       def do_execute
         visit(url)
 
-        fill_in("registrationDetails_firstNameTextBox", with: customer.first_name)
-        fill_in("registrationDetails_familyNameTextBox", with: customer.family_name)
-        fill_in("registrationDetails_emailAddressTextBox", with: customer.email)
-        fill_in("registrationDetails_userNameTextBox", with: customer.username)
-        fill_in("registrationDetails_passwordTextBox", with: customer.password)
-        fill_in("registrationDetails_passwordConfirmTextBox", with: customer.password)
-        select(customer.secret_question, from: "registrationDetails_secretQuestionDropDownList")
-        fill_in("registrationDetails_secretAnswerTextBox", with: customer.secret_answer)
+        fill_in("registrationDetails_firstNameTextBox", with: customer.personal_details_first_name)
+        fill_in("registrationDetails_familyNameTextBox", with: customer.personal_details_family_name)
+        fill_in("registrationDetails_emailAddressTextBox", with: customer.signup_email)
+        fill_in("registrationDetails_userNameTextBox", with: customer.signup_username)
+        fill_in("registrationDetails_passwordTextBox", with: customer.signup_password)
+        fill_in("registrationDetails_passwordConfirmTextBox", with: customer.signup_password)
+        select(customer.signup_secret_question, from: "registrationDetails_secretQuestionDropDownList")
+        fill_in("registrationDetails_secretAnswerTextBox", with: customer.signup_answer_to_secret_question)
         check("registrationDetails_agreeToConditionsCheckBox")
 
         find("#registerImageButton").click

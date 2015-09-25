@@ -1,0 +1,27 @@
+nz:
+  whv:
+    - login
+    - signup
+    - apply_now
+    - personal1
+    - personal2
+    - personal3
+    - medical1
+    - character
+    - specific
+    - submit
+    - pay
+  sfv:
+    - login
+    - signup
+    - apply_now
+    - personal1
+    - personal2
+    - personal3
+    - medical1
+    - character
+    - specific
+    - submit
+    - pay
+
+au:

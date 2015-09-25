@@ -1,18 +1,8 @@
 class NZ::SfvCustomer < Customer
+  store_accessor :fields, *Settings::Fields.nz.sfv_customer.flatten
+
   def self.events
-    [
-      "login",
-      "signup",
-      "apply_now",
-      "personal1",
-      "personal2",
-      "personal3",
-      "medical1",
-      "character",
-      "sfv_specific",
-      "submit",
-      "pay"
-    ].freeze
+    Settings::Events.nz.sfv_customer
   end
 
   include EventHandler

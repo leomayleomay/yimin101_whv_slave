@@ -1,0 +1,75 @@
+nz:
+  - signup_email
+  - signup_username
+  - signup_password
+  - signup_secret_question
+  - signup_answer_to_secret_question
+
+  - application_id
+
+  - personal_details_family_name
+  - personal_details_given_name_1
+  - personal_details_given_name_2
+  - personal_details_given_name_3
+  - personal_details_other_names
+  - personal_details_title
+  - personal_details_other_title
+  - personal_details_gender
+  - personal_details_date_of_birth
+  - personal_details_country
+
+  - address_street_number
+  - address_address_1
+  - address_suburb
+  - address_city
+  - address_province_state
+  - address_postal_code
+  - address_country
+
+  - contact_details_phone_number
+  - contact_details_phone_number_night
+  - contact_details_phone_number_mobile
+  - contact_details_fax_number
+  - contact_details_email_address
+
+  - identification_passport_number
+  - identification_passport_expiry_date
+  - identification_other_identification
+  - identification_other_issue_date
+  - identification_other_expiry_date
+
+  - general_personal_industry
+  - general_personal_occupation
+
+  - medical_conditions_renal_dialysis
+  - medical_conditions_tuberculosis
+  - medical_conditions_cancer
+  - medical_conditions_heart_disease
+  - medical_conditions_disability
+  - medical_conditions_hospitalisation
+  - medical_conditions_residential_care
+  - medical_conditions_pregnancy_status
+  - medical_conditions_health_details
+  - medical_conditions_tb_risk
+
+  - character_imprisonment_5_years
+  - character_imprisonment_12_months
+  - character_removal_order
+  - character_deported
+  - character_deported_date
+  - character_country
+  - character_charged
+  - character_convicted
+  - character_under_investigation
+  - character_excluded
+  - character_removed
+  - character_exclude_removed_details
+
+  - offshore_details_sufficient_funds_holiday
+  - offshore_details_intended_travel_date
+  - offshore_details_intended_leave_date
+  - offshore_details_length_of_stay
+  - offshore_details_been_to_nz
+  - offshore_details_when_in_nz
+  - offshore_details_previous_whs_permit_visa
+  - offshore_details_previous_sfv_permit_visa

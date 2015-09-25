@@ -1,18 +1,8 @@
 class NZ::WhvCustomer < Customer
+  store_accessor :fields, *Settings::Fields.nz.whv_customer.flatten
+
   def self.events
-    [
-      "login",
-      "signup",
-      "apply_now",
-      "personal1",
-      "personal2",
-      "personal3",
-      "medical1",
-      "character",
-      "whv_specific",
-      "submit",
-      "pay"
-    ].freeze
+    Settings::Events.nz.whv_customer
   end
 
   include EventHandler

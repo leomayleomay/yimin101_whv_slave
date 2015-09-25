@@ -23,11 +23,11 @@ module Task
         def do_execute
           visit(url)
 
-          fill_in("ctl00_ContentPlaceHolder1_generalPersonal_industryControl_optionListSearch_SearchStringTextBox", with: customer.industry)
+          fill_in("ctl00_ContentPlaceHolder1_generalPersonal_industryControl_optionListSearch_SearchStringTextBox", with: customer.general_personal_industry)
           find("#ctl00_ContentPlaceHolder1_generalPersonal_industryControl_optionListSearch_SearchImageButton").click
           find("#ctl00_ContentPlaceHolder1_generalPersonal_industryControl_optionListSearch_SearchResultRepeater_ctl01_selectImageButton").click
 
-          fill_in("ctl00_ContentPlaceHolder1_generalPersonal_occupationControl_optionListSearch_SearchStringTextBox", with: customer.occupation)
+          fill_in("ctl00_ContentPlaceHolder1_generalPersonal_occupationControl_optionListSearch_SearchStringTextBox", with: customer.general_personal_occupation)
           find("#ctl00_ContentPlaceHolder1_generalPersonal_occupationControl_optionListSearch_SearchImageButton").click
           find("#ctl00_ContentPlaceHolder1_generalPersonal_occupationControl_optionListSearch_SearchResultRepeater_ctl01_selectImageButton").click
 
