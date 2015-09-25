@@ -7,6 +7,8 @@ gem 'rails-api'
 
 gem 'pg'
 
+gem 'headless'
+
 gem 'capybara'
 
 gem "capybara-webkit"
@@ -14,6 +16,8 @@ gem "capybara-webkit"
 gem 'capybara-screenshot'
 
 gem 'capybara-user_agent'
+
+gem 'selenium-webdriver'
 
 gem 'pusher'
 
