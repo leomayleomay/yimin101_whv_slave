@@ -19,8 +19,8 @@ module Task
         def do_execute
           visit(url)
 
-          fill_in("OnlineServicesLoginStealth_VisaLoginControl_userNameTextBox", with: customer.signup_username)
-          fill_in("OnlineServicesLoginStealth_VisaLoginControl_passwordTextBox", with: customer.signup_password)
+          fill_in("OnlineServicesLoginStealth_VisaLoginControl_userNameTextBox", with: customer.username)
+          fill_in("OnlineServicesLoginStealth_VisaLoginControl_passwordTextBox", with: customer.password)
 
           find("#OnlineServicesLoginStealth_VisaLoginControl_loginImageButton").click
         end

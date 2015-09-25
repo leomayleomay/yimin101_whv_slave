@@ -32,16 +32,16 @@ module Task
         def do_execute
           visit(url)
 
-          # select(customer.medical_conditions_renal_dialysis, from: "ctl00_ContentPlaceHolder1_medicalConditions_renalDialysisDropDownList")
-          # select(customer.medical_conditions_tuberculosis, from: "ctl00_ContentPlaceHolder1_medicalConditions_tuberculosisDropDownList")
-          # select(customer.medical_conditions_cancer, from: "ctl00_ContentPlaceHolder1_medicalConditions_cancerDropDownList")
-          # select(customer.medical_conditions_heart_disease, from: "ctl00_ContentPlaceHolder1_medicalConditions_heartDiseaseDropDownList")
-          # select(customer.medical_conditions_disability, from: "ctl00_ContentPlaceHolder1_medicalConditions_disabilityDropDownList")
-          # select(customer.medical_conditions_hospitalisation, from: "ctl00_ContentPlaceHolder1_medicalConditions_hospitalisationDropDownList")
-          # select(customer.medical_conditions_residential_care, from: "ctl00_ContentPlaceHolder1_medicalConditions_residentailCareDropDownList")
-          # select(customer.medical_conditions_pregnancy_status, from: "ctl00_ContentPlaceHolder1_medicalConditions_pregnancy_pregnancyStatusDropDownList") if customer.female?
-          # fill_in("ctl00_ContentPlaceHolder1_medicalConditions_healthDetailsIntergenTextBox", with: customer.medical_conditions_health_details) if customer.medical_conditions_health_details.present?
-          # select(customer.medical_conditions_tb_risk, from: "ctl00_ContentPlaceHolder1_medicalConditions_tbRiskDropDownList")
+          # select(customer.renal_dialysis, from: "ctl00_ContentPlaceHolder1_medicalConditions_renalDialysisDropDownList")
+          # select(customer.tuberculosis, from: "ctl00_ContentPlaceHolder1_medicalConditions_tuberculosisDropDownList")
+          # select(customer.cancer, from: "ctl00_ContentPlaceHolder1_medicalConditions_cancerDropDownList")
+          # select(customer.heart_disease, from: "ctl00_ContentPlaceHolder1_medicalConditions_heartDiseaseDropDownList")
+          # select(customer.disability, from: "ctl00_ContentPlaceHolder1_medicalConditions_disabilityDropDownList")
+          # select(customer.hospitalisation, from: "ctl00_ContentPlaceHolder1_medicalConditions_hospitalisationDropDownList")
+          # select(customer.residential_care, from: "ctl00_ContentPlaceHolder1_medicalConditions_residentailCareDropDownList")
+          # select(customer.pregnancy_status, from: "ctl00_ContentPlaceHolder1_medicalConditions_pregnancy_pregnancyStatusDropDownList") if customer.female?
+          # fill_in("ctl00_ContentPlaceHolder1_medicalConditions_healthDetailsIntergenTextBox", with: customer.health_details) if customer.health_details.present?
+          # select(customer.tb_risk, from: "ctl00_ContentPlaceHolder1_medicalConditions_tbRiskDropDownList")
 
           select("No", from: "ctl00_ContentPlaceHolder1_medicalConditions_renalDialysisDropDownList")
           select("No", from: "ctl00_ContentPlaceHolder1_medicalConditions_tuberculosisDropDownList")

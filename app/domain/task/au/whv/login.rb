@@ -19,8 +19,8 @@ module Task
         def do_execute
           visit(url)
 
-          fill_in("Username", with: customer.signup_username)
-          fill_in("Password", with: customer.signup_password)
+          fill_in("Username", with: customer.username)
+          fill_in("Password", with: customer.password)
 
           click_button("Login")
           click_button("Continue")

@@ -32,22 +32,22 @@ module Task
         def do_execute
           visit(url)
 
-          # select(customer.character_imprisonment_5_years, from: "ctl00_ContentPlaceHolder1_character_imprisonment5YearsDropDownList")
-          # select(customer.character_imprisonment_12_months, from: "ctl00_ContentPlaceHolder1_character_imprisonment12MonthsDropDownList")
-          # select(customer.character_removal_order, from: "ctl00_ContentPlaceHolder1_character_removalOrderDropDownList")
-          # select(customer.character_deported, from: "ctl00_ContentPlaceHolder1_character_deportedDropDownList")
-          # if customer.character_deported_date.present?
-          #   select(customer.character_deported_date.to_date.strftime("%d"), from: "ctl00_ContentPlaceHolder1_character_deportedDateDatePicker_Day")
-          #   select(customer.character_deported_date.to_date.strftime("%b"), from: "ctl00_ContentPlaceHolder1_character_deportedDateDatePicker_Month")
-          #   select(customer.character_deported_date.to_date.strftime("%Y"), from: "ctl00_ContentPlaceHolder1_character_deportedDateDatePicker_Year")
+          # select(customer.imprisonment_5_years, from: "ctl00_ContentPlaceHolder1_character_imprisonment5YearsDropDownList")
+          # select(customer.imprisonment_12_months, from: "ctl00_ContentPlaceHolder1_character_imprisonment12MonthsDropDownList")
+          # select(customer.removal_order, from: "ctl00_ContentPlaceHolder1_character_removalOrderDropDownList")
+          # select(customer.deported, from: "ctl00_ContentPlaceHolder1_character_deportedDropDownList")
+          # if customer.deported_date.present?
+          #   select(customer.deported_date.to_date.strftime("%d"), from: "ctl00_ContentPlaceHolder1_character_deportedDateDatePicker_Day")
+          #   select(customer.deported_date.to_date.strftime("%b"), from: "ctl00_ContentPlaceHolder1_character_deportedDateDatePicker_Month")
+          #   select(customer.deported_date.to_date.strftime("%Y"), from: "ctl00_ContentPlaceHolder1_character_deportedDateDatePicker_Year")
           # end
-          # select(customer.character_country, from: "ctl00_ContentPlaceHolder1_character_countryDropDownList") if customer.deportion_country.present?
-          # select(customer.character_charged, from: "ctl00_ContentPlaceHolder1_character_chargedDropDownList")
-          # select(customer.character_convicted, from: "ctl00_ContentPlaceHolder1_character_convictedDropDownList")
-          # select(customer.character_under_investigation, from: "ctl00_ContentPlaceHolder1_character_underInvestigationDropDownList")
-          # select(customer.character_excluded, from: "ctl00_ContentPlaceHolder1_character_excludedDropDownList")
-          # select(customer.character_removed, from: "ctl00_ContentPlaceHolder1_character_removedDropDownList")
-          # fill_in("ctl00_ContentPlaceHolder1_character_excludeRemovedDetailsTextbox", with: customer.character_exclude_removed_details) if customer.character_exclude_removed_details.present?
+          # select(customer.deported_country, from: "ctl00_ContentPlaceHolder1_character_countryDropDownList") if customer.deportion_country.present?
+          # select(customer.charged, from: "ctl00_ContentPlaceHolder1_character_chargedDropDownList")
+          # select(customer.convicted, from: "ctl00_ContentPlaceHolder1_character_convictedDropDownList")
+          # select(customer.under_investigation, from: "ctl00_ContentPlaceHolder1_character_underInvestigationDropDownList")
+          # select(customer.excluded, from: "ctl00_ContentPlaceHolder1_character_excludedDropDownList")
+          # select(customer.removed, from: "ctl00_ContentPlaceHolder1_character_removedDropDownList")
+          # fill_in("ctl00_ContentPlaceHolder1_character_excludeRemovedDetailsTextbox", with: customer.exclude_removed_details) if customer.exclude_removed_details.present?
 
           select("No", from: "ctl00_ContentPlaceHolder1_character_imprisonment5YearsDropDownList")
           select("No", from: "ctl00_ContentPlaceHolder1_character_imprisonment12MonthsDropDownList")
