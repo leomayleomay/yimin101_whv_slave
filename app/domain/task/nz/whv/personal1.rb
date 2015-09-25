@@ -31,9 +31,9 @@ module Task
           select(customer.personal_details_title, from: "ctl00_ContentPlaceHolder1_personDetails_titleDropDownList")
           fill_in("ctl00_ContentPlaceHolder1_personDetails_otherTitleTextBox", with: customer.personal_details_other_title) if customer.personal_details_other_title.present?
           select(customer.personal_details_gender, from: "ctl00_ContentPlaceHolder1_personDetails_genderDropDownList")
-          select(customer.personal_details_date_of_birth.strftime("%d"), from: "ctl00_ContentPlaceHolder1_personDetails_dateOfBithDatePicker_Day")
-          select(customer.personal_details_date_of_birth.strftime("%b"), from: "ctl00_ContentPlaceHolder1_personDetails_dateOfBithDatePicker_Month")
-          select(customer.personal_details_date_of_birth.strftime("%Y"), from: "ctl00_ContentPlaceHolder1_personDetails_dateOfBithDatePicker_Year")
+          select(customer.personal_details_date_of_birth.to_date.strftime("%d"), from: "ctl00_ContentPlaceHolder1_personDetails_dateOfBithDatePicker_Day")
+          select(customer.personal_details_date_of_birth.to_date.strftime("%b"), from: "ctl00_ContentPlaceHolder1_personDetails_dateOfBithDatePicker_Month")
+          select(customer.personal_details_date_of_birth.to_date.strftime("%Y"), from: "ctl00_ContentPlaceHolder1_personDetails_dateOfBithDatePicker_Year")
           # select(customer.personal_details_country, from: "ctl00_ContentPlaceHolder1_personDetails_CountryDropDownList")
           select("China", from: "ctl00_ContentPlaceHolder1_personDetails_CountryDropDownList")
           fill_in("ctl00_ContentPlaceHolder1_addressContactDetails_address_streetNumberTextbox", with: customer.address_street_number) if customer.address_street_number.present?

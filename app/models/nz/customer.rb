@@ -1,4 +1,6 @@
 class NZ::Customer < Customer
+  store_accessor :fields, *Settings::Fields.nz
+
   def female?
     personal_details_gender == "Female"
   end

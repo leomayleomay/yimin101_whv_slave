@@ -1,8 +1,6 @@
-class NZ::WhvCustomer < Customer
-  store_accessor :fields, *Settings::Fields.nz.whv_customer.flatten
-
+class NZ::WhvCustomer < NZ::Customer
   def self.events
-    Settings::Events.nz.whv_customer
+    Settings::Events.nz.whv
   end
 
   include EventHandler

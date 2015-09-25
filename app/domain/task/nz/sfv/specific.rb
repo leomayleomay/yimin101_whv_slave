@@ -5,11 +5,11 @@ module Task
         protected
 
         def succeed!
-          customer.whv_specific_did_succeed!
+          customer.specific_did_succeed!
         end
 
         def fail_with_error!(message, backtrace)
-          customer.whv_specific_did_fail_with_error!(message, backtrace)
+          customer.specific_did_fail_with_error!(message, backtrace)
         end
 
         def errors

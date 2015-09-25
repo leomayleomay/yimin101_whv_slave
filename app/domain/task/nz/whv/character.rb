@@ -37,9 +37,9 @@ module Task
           # select(customer.character_removal_order, from: "ctl00_ContentPlaceHolder1_character_removalOrderDropDownList")
           # select(customer.character_deported, from: "ctl00_ContentPlaceHolder1_character_deportedDropDownList")
           # if customer.character_deported_date.present?
-          #   select(customer.character_deported_date.strftime("%d"), from: "ctl00_ContentPlaceHolder1_character_deportedDateDatePicker_Day")
-          #   select(customer.character_deported_date.strftime("%b"), from: "ctl00_ContentPlaceHolder1_character_deportedDateDatePicker_Month")
-          #   select(customer.character_deported_date.strftime("%Y"), from: "ctl00_ContentPlaceHolder1_character_deportedDateDatePicker_Year")
+          #   select(customer.character_deported_date.to_date.strftime("%d"), from: "ctl00_ContentPlaceHolder1_character_deportedDateDatePicker_Day")
+          #   select(customer.character_deported_date.to_date.strftime("%b"), from: "ctl00_ContentPlaceHolder1_character_deportedDateDatePicker_Month")
+          #   select(customer.character_deported_date.to_date.strftime("%Y"), from: "ctl00_ContentPlaceHolder1_character_deportedDateDatePicker_Year")
           # end
           # select(customer.character_country, from: "ctl00_ContentPlaceHolder1_character_countryDropDownList") if customer.deportion_country.present?
           # select(customer.character_charged, from: "ctl00_ContentPlaceHolder1_character_chargedDropDownList")
